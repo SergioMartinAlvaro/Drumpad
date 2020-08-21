@@ -1,0 +1,11 @@
+{
+    "expo": {
+      "name": "Launchapp",
+      "version": "1.0.0",
+      "slug": "launchapp",
+      "android": {
+        "package": "com.frontsergio.launchapp",
+        "versionCode": 1
+      }
+    }
+  }

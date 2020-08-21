@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, Image, FlatList, Alert } from "react-native";
 import * as ScreenOrientation from 'expo-screen-orientation';
 import { nanoid } from 'nanoid/async/index.native';
-import ListItem from './components/ListItem';
-import AddItem from './components/AddItem';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Launchpad from './components/Launchpad';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useFonts } from "@use-expo/font";
 
@@ -24,19 +25,9 @@ const App = () => {
             // Button Linear Gradient
             colors={['#EBCA7F', '#D3D3D3']}
             style={{flex:1, alignItems: 'center', borderRadius: 5 }}>
-             <View style={styles.bottom}>
-               <View style={styles.bottomItem}>
-                 <View style={styles.bottomItemInner}></View>
-               </View>
-               <View style={styles.bottomItemMain}>
-                 <View style={styles.bottomItemInnerMain}>
-                   <Text style={styles.text}>LaunchApp</Text>
-                 </View>
-               </View>
-               <View style={styles.bottomItem}>
-                 <View style={styles.bottomItemInner}></View>
-               </View>
-             </View>
+            <Header />
+            <Launchpad />
+            <Footer />
           </LinearGradient>
       </View>
     );
@@ -55,7 +46,7 @@ const styles = StyleSheet.create({
   linearGradient: {
 
   },
-  bottom: {
+  header: {
     width: '100%',
     height: '45%',
     backgroundColor: 'transparent',
@@ -63,22 +54,22 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     marginTop: 70
   },
-  bottomItem: {
+  headerItem: {
     width: '20%',
     height: '11.5%',
   },
-  bottomItemInner: {
+  headerItemInner: {
     flex: 1,
     backgroundColor: '#7A2D93',
     marginTop: 30,
     zIndex: 10
 
   },
-  bottomItemMain: {
+  headerItemMain: {
     width: '60%',
     height: '20%'
   },
-  bottomItemInnerMain: {
+  headerItemInnerMain: {
     flex: 1,
     backgroundColor: "transparent",
     borderWidth: 6,
